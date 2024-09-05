@@ -5,7 +5,7 @@ on:
     inputs:
       spec:
         description: Run by cypress comand line
-        default: cypress/e2e/*
+        default: yarn cypress run
 
 jobs:
   cypress-run:
@@ -16,12 +16,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+         # install-command: yarn install
+          browser: firefox
         
       - name: Install dependencies
         run: yarn install
         
       - name: Run E2E teste
-        run: ${{github.event.inputs.cli}}
+        run: ${{github.event.inputs.spec}}
 
 
           
