@@ -37,7 +37,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
-  cypress-chorme-tests:
+  cypress-chrome-tests:
     needs: cypress-electron-tests
     runs-on: ubuntu-latest
     container:
@@ -56,9 +56,9 @@ jobs:
         uses: cypress-io/github-action@v6.5.0
         with:
           install-command: yarn install
-          browser: chorme
+          browser: chrome
           record: true
-          group: UI Chorme
+          group: UI Chrome
           spec: ${{github.event.inputs.spec}}
           parallel: true
           
