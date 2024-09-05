@@ -1,0 +1,27 @@
+name: Meu teste
+
+on:
+  workflow_dispatch:
+    inputs:
+      spec:
+        description: Run by cypress comand line
+        default: cypress/e2e/*
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node-20.14.0-chrome-126.0.6478.114-1-ff-127.0.1-edge-126.0.2592.61-1
+      options: --user 1001
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Install dependencies
+        run: yarn install
+        
+      - name: Run E2E teste
+        run: ${{github.event.inputs.cli}}
+
+
+          
