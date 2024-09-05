@@ -33,7 +33,7 @@ jobs:
           parallel: true
           
         env:
-          CYPRESS_RECORD_KEY: 4ebd3b2b-8714-47d9-9e49-00a8f58bc456
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
@@ -63,7 +63,7 @@ jobs:
           parallel: true
           
         env:
-          CYPRESS_RECORD_KEY: 4ebd3b2b-8714-47d9-9e49-00a8f58bc456
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
 
@@ -93,5 +93,5 @@ jobs:
           parallel: true
           
         env:
-          CYPRESS_RECORD_KEY: 4ebd3b2b-8714-47d9-9e49-00a8f58bc456
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
