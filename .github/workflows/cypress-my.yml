@@ -16,15 +16,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
+        #with:
          # install-command: yarn install
-          browser: firefox
+         # browser: firefox
         
       - name: Install dependencies
         run: yarn install
         
       - name: Run E2E teste
-        run: ${{github.event.inputs.spec}}
+        run: ${{github.event.inputs.spec}} --browser chrome
 
 
           
