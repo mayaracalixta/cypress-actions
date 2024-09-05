@@ -28,7 +28,7 @@ jobs:
           record: true
           group: UI Electron
           spec: ${{github.event.inputs.spec}}
-          parallel: true
+          #parallel: true
           
         env:
           CYPRESS_RECORD_KEY: 4ebd3b2b-8714-47d9-9e49-00a8f58bc456
