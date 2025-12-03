@@ -39,6 +39,11 @@ jobs:
       - name: Run E2E teste
         run: ${{github.event.inputs.spec}} --browser chrome
 
+      - uses: actions/upload-artifact@v4 
+        with:
+          name: relatorio-cypress-default 
+          path: cypress/reports          
+
   cypress-run-firefox:
     runs-on: ubuntu-latest
     container:
@@ -53,3 +58,6 @@ jobs:
         
       - name: Run E2E teste
         run: ${{github.event.inputs.spec}} --browser firefox
+
+
+
